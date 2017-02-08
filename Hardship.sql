@@ -207,10 +207,10 @@ INSERT INTO `cliente` (`ID`, `Nome`, `Cognome`, `DataNascita`, `Username`, `Pass
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `composizione`
+-- Struttura della tabella `formazione`
 --
 
-CREATE TABLE `composizione` (
+CREATE TABLE `formazione` (
   `ID_Fattura` int(11) NOT NULL,
   `ID_Articolo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -218,19 +218,19 @@ CREATE TABLE `composizione` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `creazione`
+-- Struttura della tabella `stesura`
 --
 
-CREATE TABLE `creazione` (
+CREATE TABLE `stesura` (
   `ID_Brano` int(5) NOT NULL,
   `ID_Artista` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dump dei dati per la tabella `creazione`
+-- Dump dei dati per la tabella `stesura`
 --
 
-INSERT INTO `creazione` (`ID_Brano`, `ID_Artista`) VALUES
+INSERT INTO `stesura` (`ID_Brano`, `ID_Artista`) VALUES
 (1, 1),
 (2, 1),
 (3, 1),
@@ -260,10 +260,10 @@ INSERT INTO `creazione` (`ID_Brano`, `ID_Artista`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `dettaglio`
+-- Struttura della tabella `identificazione`
 --
 
-CREATE TABLE `dettaglio` (
+CREATE TABLE `identificazione` (
   `ID_Articolo` int(11) NOT NULL,
   `ID_Album` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -397,19 +397,19 @@ INSERT INTO `fattura` (`Codice`, `InfoP`, `Indirizzo`, `DataAcquisto`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `fatturazione`
+-- Struttura della tabella `possesso`
 --
 
-CREATE TABLE `fatturazione` (
+CREATE TABLE `possesso` (
   `ID_Cliente` int(11) NOT NULL,
   `ID_Fattura` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dump dei dati per la tabella `fatturazione`
+-- Dump dei dati per la tabella `possesso`
 --
 
-INSERT INTO `fatturazione` (`ID_Cliente`, `ID_Fattura`) VALUES
+INSERT INTO `possesso` (`ID_Cliente`, `ID_Fattura`) VALUES
 (1, 1001);
 
 -- --------------------------------------------------------
@@ -436,19 +436,19 @@ INSERT INTO `feedback` (`ID`, `Utente`, `IdAlbum`, `Test`, `Data`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `lista`
+-- Struttura della tabella `composizione`
 --
 
-CREATE TABLE `lista` (
+CREATE TABLE `composizione` (
   `ID_Brano` int(11) NOT NULL,
   `ID_Album` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dump dei dati per la tabella `lista`
+-- Dump dei dati per la tabella `composizione`
 --
 
-INSERT INTO `lista` (`ID_Brano`, `ID_Album`) VALUES
+INSERT INTO `composizione` (`ID_Brano`, `ID_Album`) VALUES
 (1, 1),
 (2, 1),
 (3, 1),
@@ -502,26 +502,6 @@ CREATE TABLE `news` (
 INSERT INTO `news` (`ID`, `Contenuto`, `Data`, `Autore`, `Titolo`, `Copertina`, `Categoria`) VALUES
 (201, 'Sabato 21 gennaio allo Spazio Tondelli un doppio concerto allâ??insegna dellâ??indie folk e della sperimentazione elettronica. A Riccione unâ??icona della musica islandese nellâ??UNICA DATA ITALIANA del suo tour europeo.\r\nA due mesi dalla pubblicazione del suo primo EP The Mountain Man, uscito il 18 novembre scorso per lâ??etichetta Carosello, Wrongonyou fa ora tappa anche in Romagna.\r\n\r\nDopo la straordinaria performance di Motta, accolto con un sold out Sabato 21 gennaio, dalle 21.30, lo spazio riccionese ospita un doppio live con ingresso unico a 10 euro (prevendita liveticket.it). Ad aprire la serata Ã¨ la rivelazione Wrongonyou, allâ??anagrafe Marco Zitelli, folk-rocker classe 1990, italiano di nascita ma dal sound decisamente anglosassone, ispirato a modelli come Radiohead, John Frusciante, James Blake e soprattutto Bon Iver. A seguire, sale sul palco per una data unica in Italia una vera star dellâ??acclamata scena islandese: HÃ¶gni Egilsson, polistrumentista, compositore e voce inconfondibile di band come GusGus e HjaltalÃ­n.\r\n\r\nOriginario dei castelli romani, ma innamorato del folk nordamericano e dei paesaggi boschivi dâ??oltreoceano, Wrongonyou comincia a scrivere brani nel 2013, pubblicandoli sulla piattaforma musicale SoundCloud. Un professore di sound technology dellâ??UniversitÃ  di Oxford li ascolta e lo invita negli studi di registrazione dove ventâ??anni prima gli Shinding, poi diventati Radiohead, incidevano Manic Hedgehog. Nascono cosÃ¬ un demo dal titolo Hand e un tour che porta il musicista romano a esibirsi in Italia e allâ??estero.\r\n\r\nCon la sua voce profonda, la presenza magnetica e la straordinaria versatilitÃ  musicale HÃ¶gni Egilsson, a poco piÃ¹ di trentâ??anni, Ã¨ giÃ  da tempo unâ??icona indiscussa della scena europea. Oltre a comporre, suonare e cantare per alcune delle piÃ¹ affermate band islandesi, scrive brani per il cinema e il teatro e ha firmato musiche per la Royal Shakespeare Company. Da oltre dieci anni Ã¨ leader degli HjaltalÃ­n, gruppo indie-folk con cui ha pubblicato quattro album, tra cui Terminal (2009), votato come disco dellâ??anno in Islanda. Dal 2011, come cantante e autore, Ã¨ entrato a far parte anche dei GusGus e ha lavorato alla registrazione di Arabian Horse e Mexico, gli LP che hanno definitivamente consacrato la band di ReykjavÃ­k come un punto di riferimento per lâ??elettronica internazionale. Protagonista di prestigiose collaborazioni con John Grant, Ã?lafur Arnalds e con i mÃºm â?? protagonisti lo scorso anno sul palco del â??Tondelliâ?? â?? Egilsson ha di recente avviato un nuovo progetto solista da cui Ã¨ nato Shed Your Skin, album in uscita nella prossima primavera. Dopo aver fatto tappa al mitico Roter Salon/VolksbÃ¼hne di Berlino, HÃ¶gni atterra a Riccione dove presenta per la prima volta in Italia questa nuova avventura segnata da atmosfere scure ma piene di calore, e da una sapiente combinazione di sonoritÃ  acustiche e interferenze elettroniche: un viaggio intimo e dolcissimo tra le luci e le ombre dei piÃ¹ profondi sentimenti umani.', '04-02-2017', 'Andrea Fiore', 'MUSICA INDIE ALLO SPAZIO TONDELLI CON WRONGONYOU E HÃ?GNI', 'http://www.newsrimini.it/wp-content/uploads/2017/01/hogni.jpg', 'Nuove uscite');
 
--- --------------------------------------------------------
-
---
--- Struttura della tabella `preferenza`
---
-
-CREATE TABLE `preferenza` (
-  `ID_Cliente` int(11) NOT NULL,
-  `ID_Brano` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dump dei dati per la tabella `preferenza`
---
-
-INSERT INTO `preferenza` (`ID_Cliente`, `ID_Brano`) VALUES
-(1, 9),
-(1, 15);
-
--- --------------------------------------------------------
 
 --
 -- Struttura della tabella `produzione`
@@ -563,27 +543,6 @@ INSERT INTO `pubblicazione` (`ID_Album`, `ID_Etichetta`, `Data Rilascio`) VALUES
 (3, 1, '2014-10-20'),
 (9, 11, 'October 23, 2015');
 
--- --------------------------------------------------------
-
---
--- Struttura della tabella `recensione`
---
-
-CREATE TABLE `recensione` (
-  `ID_Cliente` int(5) NOT NULL,
-  `ID_Brano` int(5) NOT NULL,
-  `Data` date NOT NULL,
-  `Testo` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dump dei dati per la tabella `recensione`
---
-
-INSERT INTO `recensione` (`ID_Cliente`, `ID_Brano`, `Data`, `Testo`) VALUES
-(1, 9, '2016-04-23', 'Brano eccezionale, uno dei miei preferiti. ');
-
--- --------------------------------------------------------
 
 --
 -- Struttura della tabella `Richiesta`
@@ -693,15 +652,15 @@ ALTER TABLE `cliente`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indici per le tabelle `composizione`
+-- Indici per le tabelle `formazione`
 --
-ALTER TABLE `composizione`
+ALTER TABLE `formazione`
   ADD PRIMARY KEY (`ID_Fattura`,`ID_Articolo`);
 
 --
--- Indici per le tabelle `dettaglio`
+-- Indici per le tabelle `identificazione`
 --
-ALTER TABLE `dettaglio`
+ALTER TABLE `identificazione`
   ADD PRIMARY KEY (`ID_Articolo`,`ID_Album`);
 
 --
@@ -733,7 +692,6 @@ ALTER TABLE `f2`
 --
 ALTER TABLE `f3`
   ADD PRIMARY KEY (`ID_CD`,`ID_Album`);
-
 --
 -- Indici per le tabelle `fattura`
 --
@@ -741,9 +699,9 @@ ALTER TABLE `fattura`
   ADD PRIMARY KEY (`Codice`);
 
 --
--- Indici per le tabelle `fatturazione`
+-- Indici per le tabelle `possesso`
 --
-ALTER TABLE `fatturazione`
+ALTER TABLE `possesso`
   ADD PRIMARY KEY (`ID_Cliente`,`ID_Fattura`);
 
 --
@@ -753,9 +711,9 @@ ALTER TABLE `feedback`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indici per le tabelle `lista`
+-- Indici per le tabelle `composizione`
 --
-ALTER TABLE `lista`
+ALTER TABLE `composizione`
   ADD PRIMARY KEY (`ID_Brano`,`ID_Album`);
 
 --
@@ -764,11 +722,6 @@ ALTER TABLE `lista`
 ALTER TABLE `news`
   ADD PRIMARY KEY (`ID`);
 
---
--- Indici per le tabelle `preferenza`
---
-ALTER TABLE `preferenza`
-  ADD PRIMARY KEY (`ID_Cliente`,`ID_Brano`);
 
 --
 -- Indici per le tabelle `produzione`
