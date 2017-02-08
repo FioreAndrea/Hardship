@@ -269,10 +269,10 @@ CREATE TABLE `identificazione` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dump dei dati per la tabella `dettaglio`
+-- Dump dei dati per la tabella `identificazione`
 --
 
-INSERT INTO `dettaglio` (`ID_Articolo`, `ID_Album`) VALUES
+INSERT INTO `identificazione` (`ID_Articolo`, `ID_Album`) VALUES
 (101, 3);
 
 -- --------------------------------------------------------
