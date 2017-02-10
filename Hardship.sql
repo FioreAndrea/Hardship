@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `hardship`.`articolo` (
   `ID` INT(10) NOT NULL,
   `Quantità` INT(10) NOT NULL,
   `Prezzo` DECIMAL(4,2) NOT NULL,
-  `ID_album` INT(10) NULL DEFAULT NULL,
+  `ID_album` INT(10) NOT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
@@ -83,8 +83,8 @@ CREATE TABLE IF NOT EXISTS `hardship`.`brano` (
   `Titolo` VARCHAR(256) NOT NULL,
   `Anno` VARCHAR(11) NOT NULL,
   `Durata` VARCHAR(6) NOT NULL,
-  `ID_album` INT(10) NULL DEFAULT NULL,
-  `ID_artista` INT(10) NULL DEFAULT NULL,
+  `ID_album` INT(10) NOT NULL,
+  `ID_artista` INT(10) NOT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `hardship`.`cd` (
   `ID` INT(10) NOT NULL,
   `Prezzo` DECIMAL(4,2) NOT NULL,
   `numero_Copie` INT(10) NOT NULL,
-  `ID_Album` INT(10) NULL DEFAULT NULL,
+  `ID_Album` INT(10) NOT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `hardship`.`digitale` (
   `ID` INT(10) NOT NULL,
   `Prezzo` DECIMAL(4,2) NOT NULL,
   `numero_Copie` INT(10) NOT NULL,
-  `ID_album` INT(10) NULL DEFAULT NULL,
+  `ID_album` INT(10) NOT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
@@ -153,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `hardship`.`fattura` (
   `InfoP` VARCHAR(64) NOT NULL,
   `Indirizzo` TEXT NOT NULL,
   `DataAcquisto` VARCHAR(11) NOT NULL,
-  `ID_cliente` INT(10) NULL DEFAULT NULL,
+  `ID_cliente` INT(10) NOT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
@@ -164,6 +164,7 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hardship`.`feedback` (
   `ID` INT(10) NOT NULL,
+  'titolo' VARCHAR(25) NOT NULL,
   `Testo` VARCHAR(1024) NOT NULL,
   `Data` VARCHAR(11) NOT NULL,
   `ID_Album` INT(10) NOT NULL,
@@ -219,7 +220,7 @@ CREATE TABLE IF NOT EXISTS `hardship`.`richiesta` (
   `ID` INT(10) NOT NULL,
   `nome_album` VARCHAR(30) NOT NULL,
   `artista` VARCHAR(25) NOT NULL,
-  `ID_Cliente` INT(10) NULL DEFAULT NULL,
+  `ID_Cliente` INT(10) NOT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
@@ -243,7 +244,7 @@ CREATE TABLE IF NOT EXISTS `hardship`.`vinile` (
   `ID` INT(10) NOT NULL,
   `Prezzo` DECIMAL(4,2) NOT NULL,
   `numero_Copie` INT(10) NOT NULL,
-  `ID_Album` INT(10) NULL DEFAULT NULL,
+  `ID_Album` INT(10) NOT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
