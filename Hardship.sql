@@ -21,7 +21,7 @@ USE `hardship` ;
 -- Table `hardship`.`album`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hardship`.`album` (
-  `ID` INT(10) NOT NULL,
+  `ID` INT(10) NOT NULL AUTO_INCREMENT,
   `Genere` VARCHAR(30) CHARACTER SET 'utf8' NOT NULL,
   `Titolo` VARCHAR(30) NOT NULL,
   `Copertina` VARCHAR(256) NOT NULL,
@@ -33,7 +33,6 @@ CREATE TABLE IF NOT EXISTS `hardship`.`album` (
   `Data_rilascio` VARCHAR(11) NOT NULL,
   `ID_etichetta` INT(10) NOT NULL,
   `ID_artista` INT(10) NOT NULL,
-  `albumcol` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE INDEX `Titolo` (`Titolo` ASC))
 ENGINE = InnoDB
@@ -67,7 +66,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `hardship`.`artista`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hardship`.`artista` (
-  `ID` INT(10) NOT NULL,
+  `ID` INT(10) NOT NULL AUTO_INCREMENT,
   `Nome` VARCHAR(25) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE INDEX `Nazionalità` (`Nome` ASC))
@@ -79,7 +78,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `hardship`.`brano`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hardship`.`brano` (
-  `ID` INT(10) NOT NULL,
+  `ID` INT(10) NOT NULL AUTO_INCREMENT ,
   `Titolo` VARCHAR(256) NOT NULL,
   `Anno` VARCHAR(11) NOT NULL,
   `Durata` VARCHAR(6) NOT NULL,
@@ -94,7 +93,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `hardship`.`cd`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hardship`.`cd` (
-  `ID` INT(10) NOT NULL,
+  `ID` INT(10) NOT NULL AUTO_INCREMENT,
   `Prezzo` DECIMAL(4,2) NOT NULL,
   `numero_Copie` INT(10) NOT NULL,
   `ID_Album` INT(10) NOT NULL,
@@ -107,7 +106,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `hardship`.`cliente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hardship`.`cliente` (
-  `ID` INT(10) NOT NULL,
+  `ID` INT(10) NOT NULL AUTO_INCREMENT,
   `Nome` VARCHAR(25) NOT NULL,
   `Cognome` VARCHAR(30) NOT NULL,
   `DataNascita` VARCHAR(11) NOT NULL,
@@ -124,7 +123,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `hardship`.`digitale`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hardship`.`digitale` (
-  `ID` INT(10) NOT NULL,
+  `ID` INT(10) NOT NULL AUTO_INCREMENT,
   `Prezzo` DECIMAL(4,2) NOT NULL,
   `numero_Copie` INT(10) NOT NULL,
   `ID_album` INT(10) NOT NULL,
@@ -149,7 +148,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `hardship`.`fattura`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hardship`.`fattura` (
-  `ID` INT(10) NOT NULL,
+  `ID` INT(10) NOT NULL AUTO_INCREMENT,
   `InfoP` VARCHAR(64) NOT NULL,
   `Indirizzo` TEXT NOT NULL,
   `DataAcquisto` VARCHAR(11) NOT NULL,
@@ -163,8 +162,8 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `hardship`.`feedback`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hardship`.`feedback` (
-  `ID` INT(10) NOT NULL,
-  'titolo' VARCHAR(25) NOT NULL,
+  `ID` INT(10) NOT NULL AUTO_INCREMENT,
+  `Titolo`VARCHAR(25) NOT NULL,
   `Testo` VARCHAR(1024) NOT NULL,
   `Data` VARCHAR(11) NOT NULL,
   `ID_Album` INT(10) NOT NULL,
@@ -189,7 +188,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `hardship`.`news`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hardship`.`news` (
-  `ID` INT(10) NOT NULL,
+  `ID` INT(10) NOT NULL AUTO_INCREMENT,
   `Contenuto` TEXT NOT NULL,
   `Data` VARCHAR(11) NOT NULL,
   `Autore` VARCHAR(25) NOT NULL,
@@ -217,7 +216,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `hardship`.`richiesta`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hardship`.`richiesta` (
-  `ID` INT(10) NOT NULL,
+  `ID` INT(10) NOT NULL AUTO_INCREMENT,
   `nome_album` VARCHAR(30) NOT NULL,
   `artista` VARCHAR(25) NOT NULL,
   `ID_Cliente` INT(10) NOT NULL,
@@ -241,7 +240,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `hardship`.`vinile`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hardship`.`vinile` (
-  `ID` INT(10) NOT NULL,
+  `ID` INT(10) NOT NULL AUTO_INCREMENT,
   `Prezzo` DECIMAL(4,2) NOT NULL,
   `numero_Copie` INT(10) NOT NULL,
   `ID_Album` INT(10) NOT NULL,
