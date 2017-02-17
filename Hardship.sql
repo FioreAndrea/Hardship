@@ -27,15 +27,15 @@ CREATE TABLE IF NOT EXISTS `hardship`.`album` (
   `Copertina` VARCHAR(256) NOT NULL,
   `numero_brani` INT(10) NOT NULL,
   `data` VARCHAR(11) NOT NULL,
-  `Embed` TEXT NOT NULL,
+  `Embed` TEXT NULL DEFAULT NULL,
   `Dettagli` VARCHAR(256) NOT NULL,
   `username_admin` VARCHAR(15) NOT NULL,
-  `Data_rilascio` VARCHAR(11) NOT NULL,
   `ID_etichetta` INT(10) NOT NULL,
   `ID_artista` INT(10) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE INDEX `Titolo` (`Titolo` ASC))
 ENGINE = InnoDB
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -48,17 +48,18 @@ CREATE TABLE IF NOT EXISTS `hardship`.`amministratore` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
-
+INSERT INTO amministratore VALUES("root" , "root");
 -- -----------------------------------------------------
 -- Table `hardship`.`articolo`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hardship`.`articolo` (
-  `ID` INT(10) NOT NULL,
+  `ID` INT(10) NOT NULL AUTO_INCREMENT,
   `Quantità` INT(10) NOT NULL,
   `Prezzo` DECIMAL(4,2) NOT NULL,
-  `ID_album` INT(10) NOT NULL,
+  `ID_album` INT(10) NULL DEFAULT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 23
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -71,6 +72,7 @@ CREATE TABLE IF NOT EXISTS `hardship`.`artista` (
   PRIMARY KEY (`ID`),
   UNIQUE INDEX `Nazionalità` (`Nome` ASC))
 ENGINE = InnoDB
+AUTO_INCREMENT = 23
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -78,14 +80,15 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `hardship`.`brano`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hardship`.`brano` (
-  `ID` INT(10) NOT NULL AUTO_INCREMENT ,
+  `ID` INT(10) NOT NULL AUTO_INCREMENT,
   `Titolo` VARCHAR(256) NOT NULL,
   `Anno` VARCHAR(11) NOT NULL,
   `Durata` VARCHAR(6) NOT NULL,
-  `ID_album` INT(10) NOT NULL,
-  `ID_artista` INT(10) NOT NULL,
+  `ID_album` INT(10) NULL DEFAULT NULL,
+  `ID_artista` INT(10) NULL DEFAULT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -96,9 +99,10 @@ CREATE TABLE IF NOT EXISTS `hardship`.`cd` (
   `ID` INT(10) NOT NULL AUTO_INCREMENT,
   `Prezzo` DECIMAL(4,2) NOT NULL,
   `numero_Copie` INT(10) NOT NULL,
-  `ID_Album` INT(10) NOT NULL,
+  `ID_Album` INT(10) NULL DEFAULT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -116,6 +120,7 @@ CREATE TABLE IF NOT EXISTS `hardship`.`cliente` (
   `Email` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 6
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -126,9 +131,10 @@ CREATE TABLE IF NOT EXISTS `hardship`.`digitale` (
   `ID` INT(10) NOT NULL AUTO_INCREMENT,
   `Prezzo` DECIMAL(4,2) NOT NULL,
   `numero_Copie` INT(10) NOT NULL,
-  `ID_album` INT(10) NOT NULL,
+  `ID_album` INT(10) NULL DEFAULT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -136,11 +142,12 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `hardship`.`etichetta`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hardship`.`etichetta` (
-  `ID` INT(10) NOT NULL,
+  `ID` INT(10) NOT NULL AUTO_INCREMENT,
   `Nome` VARCHAR(25) NOT NULL,
   `Feed` INT(10) NULL DEFAULT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 31
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -152,9 +159,10 @@ CREATE TABLE IF NOT EXISTS `hardship`.`fattura` (
   `InfoP` VARCHAR(64) NOT NULL,
   `Indirizzo` TEXT NOT NULL,
   `DataAcquisto` VARCHAR(11) NOT NULL,
-  `ID_cliente` INT(10) NOT NULL,
+  `ID_cliente` INT(10) NULL DEFAULT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 22
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -163,13 +171,14 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hardship`.`feedback` (
   `ID` INT(10) NOT NULL AUTO_INCREMENT,
-  `Titolo`VARCHAR(25) NOT NULL,
+  `Titolo` VARCHAR(25) NOT NULL,
   `Testo` VARCHAR(1024) NOT NULL,
   `Data` VARCHAR(11) NOT NULL,
   `ID_Album` INT(10) NOT NULL,
   `ID_Cliente` INT(10) NOT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 40
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -198,6 +207,7 @@ CREATE TABLE IF NOT EXISTS `hardship`.`news` (
   `Username_admin` VARCHAR(15) NOT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 8
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -219,9 +229,10 @@ CREATE TABLE IF NOT EXISTS `hardship`.`richiesta` (
   `ID` INT(10) NOT NULL AUTO_INCREMENT,
   `nome_album` VARCHAR(30) NOT NULL,
   `artista` VARCHAR(25) NOT NULL,
-  `ID_Cliente` INT(10) NOT NULL,
+  `ID_Cliente` INT(10) NULL DEFAULT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 219
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -243,9 +254,10 @@ CREATE TABLE IF NOT EXISTS `hardship`.`vinile` (
   `ID` INT(10) NOT NULL AUTO_INCREMENT,
   `Prezzo` DECIMAL(4,2) NOT NULL,
   `numero_Copie` INT(10) NOT NULL,
-  `ID_Album` INT(10) NOT NULL,
+  `ID_Album` INT(10) NULL DEFAULT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = latin1;
 
 
